@@ -25,7 +25,11 @@ from django.urls import path
 
 class HomeView(TemplateView):
     template_name='home.html'
+class AboutView(TemplateView):
+    template_name='about.html'
 
 urlpatterns = [
     path('', HomeView.as_view()),
+    path('home.html', HomeView.as_view()),
+    path('about.html', AboutView.as_view()),
 ]
