@@ -1,4 +1,4 @@
-"""app1 URL Configuration
+"""app2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -13,19 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-
-from django.http import HttpResponse
+from django.contrib import admin
 from django.urls import path
 
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
 
-def home_page_view(request):
-    return HttpResponse("<h1>World's Simplest Home Page</h1>")
+from django.views.generic import TemplateView
+from django.urls import path
 
-def about_page_view(request):
-    return HttpResponse("<h1>World's Simplest About Page</h1>")
+class HomeView(TemplateView):
+    template_name='home.html'
 
 urlpatterns = [
-    path('', home_page_view),
-    path('about', about_page_view),
+    path('', HomeView.as_view()),
 ]
