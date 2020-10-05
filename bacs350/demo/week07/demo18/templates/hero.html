@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+    <h1>{{ title }}</h1>
+
+
+
+    {% for h in heroes%}
+
+    <h2> {{ h.name }}</h2>
+    <p>Secret ID: {{ h.identity }}</p>
+    <p>Name: {{ h.name }}</p>
+    {% endfor %}
+</body>
+
+</html>
