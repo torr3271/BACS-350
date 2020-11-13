@@ -26,7 +26,7 @@ SECRET_KEY = 'xo%b)(02gau46ui%vwyvg1(7!kfbpptgi3ncweu98@my!!30!0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['torr3271.pythonanywhere.com']
+ALLOWED_HOSTS = ['torr3271.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Superhero.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
