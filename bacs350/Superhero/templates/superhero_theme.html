@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/hero.css">
+
+</head>
+
+<body>
+
+    {% block content %}
+
+
+    {% block header %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="../../../home">Bacs 350</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../../../home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../templates/hero.html">Hero List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    {% for i in menu.menu_items %}
+                    <li class="nav-item {{ i.active }}">
+                        <a href="{{ i.url }}" class="nav-link">{{ i.label }}</a>
+                    </li>
+                    {% endfor %}
+
+
+                    {% block user %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <span class="nav-link p-2 m-2">Welcome {{ user.username }} <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg> </span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}" class=" nav-link text-light p-2 m-2">
+                            <i class="fas fa-sign-out-alt"></i> Log out
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <span class="nav-link p-2 m-2"> You are not logged in <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-x-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z" />
+                            </svg> </span>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{% url 'login' %}" class="nav-link text-light p-2 m-2">
+                            <i class="fas fa-sign-in-alt"></i> Log In
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% endblock user %}
+                </ul>
+
+            </div>
+
+        </nav>
+    </header>
+    {% endblock header %}
+    {% block navbar %}
+
+    {% endblock navbar %}
+
+    {% block main %}
+    <h2>NO MAIN DEFINED</h2>
+    {% endblock main %}
+
+    {% block footer %}
+    <footer class="text-center m-5">
+        <h6>BACS 350 SuperHero Project</h6>
+    </footer>
+    {% endblock footer %}
+
+    {% endblock content %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

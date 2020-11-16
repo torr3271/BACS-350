@@ -1,0 +1,32 @@
+{% extends 'superhero_theme.html' %}
+
+
+{% block header %}
+{% include '_header.html' %}
+{% endblock header %}
+
+{% block navbar %}
+{% include '_navbar.html' %}
+{% endblock navbar %}
+
+{% block main %}
+<h4>The purpose of the Workshop app is to demonstrate the use of View Inheritance along with other tools and cool tricks
+    that we can use in Web Development within the Python Django Framework.</h4>
+<h1 class='text-light'>Workshop</h1>
+<ul>
+    <li><a href="card">Card View</a></li>
+    <li><a href="cards">Cards View</a></li>
+    <li><a href="table">Table View</a></li>
+    <li><a href="tabs">Tabs View</a></li>
+    <li><a href="accordion">Accordion View</a></li>
+    <li><a href="carousel">Carousel View</a></li>
+    <li><a href="doc/README.md">Document View</a></li>
+    <li><a href="doc/Test.md">Test View</a></li>
+</ul>
+
+{% endblock main %}
+
+
+{% block footer %}
+{% include '_footer.html' %}
+{% endblock footer %}

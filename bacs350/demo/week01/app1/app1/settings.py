@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '1mm%2^81kc@-uoq(m0!*%9yv3ps&d2cmyob@f7883#x#&oxn5p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [torr3271.pythonanywhere.com]
 
 
 # Application definition
