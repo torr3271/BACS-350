@@ -11,20 +11,20 @@
 
 <body>
     <h1>Superhero List</h1>
-    <h3>Don't be shy, create a new hero!</h3>
-    <h3><Strong>Click on any Superhero Name to see their Identity, Strength, Weakness and a flattering photo!</Strong></h3>
-    <a href="hero_add.html" class="btn btn-primary">Add Hero</a>
+    <!--<h3>Don't be shy, create a new hero!</h3>-->
+    <h3><Strong>Click on any Superhero Name to see their profile!</Strong></h3>
+    <!--<a href="hero_add.html" class="btn btn-primary">Add Hero</a>-->
     <hr>
     {% for hero in object_list %}
 
     <div class="card text-white bg-dark mb-3" style="width: 35rem;">
         <div class="card-body">
             <h3>
-                <a href="hero_detail.html">{{ hero.name }}</a>
+                <a href="hero_detail.html">{{ hero.name }} Profile</a>
             </h3>
             <p>{{ hero.body }}</p>
-            <a href="hero_edit.html" class="btn btn-primary"> Edit</a>
-            <a href="hero_delete.html" class="btn btn-primary"> Delete</a>
+            <!-- <a href="hero_edit.html" class="btn btn-primary"> Edit</a>
+            <a href="hero_delete.html" class="btn btn-primary"> Delete</a> -->
         </div>
     </div>
 
