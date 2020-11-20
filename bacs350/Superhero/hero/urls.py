@@ -1,6 +1,7 @@
 from .views import AboutPage, BasePage, HomePage, ProfilePage, HeroDetailView, HeroListView, HeroCreateView, HeroUpdateView, HeroDeleteView
 from django.urls import path
 from . import views
+from django.contrib.admin import site
 
 urlpatterns = [
     path('hero', HeroListView.as_view(), name='hero'),
@@ -13,6 +14,6 @@ urlpatterns = [
     path('about', AboutPage.as_view()),
     path('home', HomePage.as_view()),
     path('profile', ProfilePage.as_view()),
+    path(r'admin', site.urls),
     path('', HomePage.as_view()),
-
 ] 
